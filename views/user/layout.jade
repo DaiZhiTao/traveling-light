@@ -1,0 +1,26 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/users/style.css')
+  body
+
+  .nav-container
+    ul.nav-list
+      li.nav-item
+        a(href="/") 广场
+      li.nav-item
+        a(href="/friends-circle") 朋友圈
+      li.nav-item
+        a(href="/my-collections") 我的收藏
+      li.nav-item
+        a(href="/my-raiders") 我的攻略
+
+    .main-container
+      block square
+      block friends-circle
+      block my-raiders
+      block my-collections
+
+
+    block content
