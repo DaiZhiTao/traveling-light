@@ -2,7 +2,7 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/users/style.css')
+    link(rel='stylesheet', href='public/stylesheets/users/style.css')
   body
 
   .nav-container
@@ -14,13 +14,25 @@ html
       li.nav-item
         a(href="/my-collections") 我的收藏
       li.nav-item
-        a(href="/my-raiders") 我的攻略
+        a(href="/my-data") 我的资料
+      li.nav-item
+        a(href="/my-friends") 我的好友
+      li.nav-item
+        a(href="/my-pub") 我的发布
+      li.nav-item
+        a(href="/login") 登录
+      li.nav-item
+        a(href="/register") 注册
+
 
     .main-container
       block square
       block friends-circle
-      block my-raiders
+      block my-data
       block my-collections
+      block my-friends
+      block my-pub
+      block login
 
 
     block content

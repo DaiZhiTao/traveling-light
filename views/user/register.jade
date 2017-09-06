@@ -1,0 +1,41 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='semantic/dist/components/reset.css')
+    link(rel='stylesheet', href='semantic/dist/components/site.css')
+    link(rel='stylesheet', href='semantic/dist/components/container.css')
+    link(rel='stylesheet', href='semantic/dist/components/grid.css')
+    link(rel='stylesheet', href='semantic/dist/components/header.css')
+    link(rel='stylesheet', href='semantic/dist/components/image.css')
+    link(rel='stylesheet', href='semantic/dist/components/menu.css')
+    link(rel='stylesheet', href='semantic/dist/components/divider.css')
+    link(rel='stylesheet', href='semantic/dist/components/segment.css')
+    link(rel='stylesheet', href='semantic/dist/components/form.css')
+    link(rel='stylesheet', href='semantic/dist/components/input.css')
+    link(rel='stylesheet', href='semantic/dist/components/button.css')
+    link(rel='stylesheet', href='semantic/dist/components/list.css')
+    link(rel='stylesheet', href='semantic/dist/components/message.css')
+    link(rel='stylesheet', href='semantic/dist/components/icon.css')
+    link(rel='stylesheet', href='semantic/dist/semantic.min.css')
+    link(rel='stylesheet', href='public/stylesheets/users/register.css')
+  body
+    div.ui.middle.aligned.center.aligned.grid
+      .column
+        h2.ui.image.header
+          .content 注册
+        form.ui.large.form
+          .ui.stacked.segment
+            .field
+              .ui.left.icon.input
+                i.user.icon
+                input(type='text', name='tel', placeholder='请填写您的手机号')
+            .field
+              .ui.left.icon.input
+                i.lock.icon
+                input(type='password', name='pass', placeholder='请填写您的密码')
+            .field
+              .ui.left.icon.input
+                i.expeditedssl.icon
+                input(type='password', name='repass', placeholder='请再次输入您的密码')
+            a.ui.fluid.large.teal.submit.button 注册
