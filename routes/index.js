@@ -1,10 +1,10 @@
 
 var express = require('express');
 var mongo = require('mongoose');
-var DB =  require('../public/lib/self/db.js');
 var router = express.Router();
 
-new DB();
+var User = require('../controller/UserController/UserController.js');
+
 /* GET users listing. */
 router.get('/', (req, res, next) => {
   res.send('后台页面');
