@@ -4,6 +4,9 @@ var mongo = require('mongoose');
 var router = express.Router();
 
 var User = require('../controller/UserController/UserController.js');
+var UserInstance = new User();
+
+
 
 /* GET users listing. */
 router.get('/', (req, res, next) => {
@@ -13,8 +16,11 @@ router.get('/', (req, res, next) => {
 // 注册接口
 
 router.post('/register',(req, res,next) => {
+
+  // 将用户保存到数据库
+  console.log(req.body.telphone);    
   res.send({
-    option: 123
+
   });
 });
 module.exports = router;
