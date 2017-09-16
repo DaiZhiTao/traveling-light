@@ -22,9 +22,9 @@ class User extends DB{
     var user = new UserModel(data);
     user.save((err) => {
       if(err){
-        console.log(err);
+        // console.log(err);
       }else{
-        console.log(`用户添加成功`);
+        // console.log(`用户添加成功`);
       }
     });
   }
