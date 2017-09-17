@@ -1,6 +1,8 @@
 const mongo = require('mongoose');
 const uri = 'mongodb://localhost/traveling';
 
+mongo.Promise = global.Promise;
+
 // 数据操作类
 class DB{
   // 构造函数

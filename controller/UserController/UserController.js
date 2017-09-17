@@ -7,25 +7,24 @@ class User extends DB{
   }
 
   // 判断用户是否存在
-  isExist (options){
+  isExist (options,callback){
     var user = UserModel.find(options,(err, docs) => {
       if(!err){
-        console.log(docs);
+        callback(docs);
       }else{
-        console.log(err);
+        callback({
+          errno : 3001,
+          error : '用户已存在'
+        });
       }
     });
   }
 
   // 添加数据
-  save (data){
+  save (data,callback){
     var user = new UserModel(data);
     user.save((err) => {
-      if(err){
-        // console.log(err);
-      }else{
-        // console.log(`用户添加成功`);
-      }
+      callback(err);
     });
   }
 }

@@ -16,28 +16,39 @@ router.get('/', (req, res, next) => {
 
 // 注册接口
 
-router.post('/register',(req, res, next) => {
+router.post('/register',(req, res) => {
 
   var md5 = crypto.createHash('md5');   //crypto模块功能是加密并生成各种散列,此处所示为MD5方式加密
   var password= md5.update(req.body.pass).digest('hex');//加密后的密码
 
   // 将用户保存到数据库
   UserInstance.save({
-    telphone:telphone,
+    telphone:req.body.telphone,
     password:password
+  },(err) => {
+    if(!err){
+      res.send({
+        errno : 1001,
+        error : '注册成功'
+      });
+    }else{
+      res.send({
+        errno : 4001,
+        error : err
+      });
+    }
   });
-
-
-  res.send('save to mongo');
-
 });
-module.exports = router;
 
 // 查看用户是否存在
   router.get('/isExist',(req, res, next) => {
     // 获取用户输入的电话
-    var tel = req.body.tel;
+    var tel = req.query.telphone;
     UserInstance.isExist({
       telphone:tel
+    },(err) => {
+        res.send(err)
     });
   });
+
+  module.exports = router;

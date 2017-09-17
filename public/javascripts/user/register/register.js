@@ -1,25 +1,23 @@
 // 注册
 
-(function(){
-
-
-  $('input[name=tel]').on('input',() => {
-      var tel = $(this).val();
-      data = {
-        tel:tel
-      };
-      $.ajax({
-        url:'/admin/isExist',
-        type:'get',
-        data:data,
-        dataType:'json',
-        success:function(json){
-          console.log(json);
-        }
-      });
+$(function(){
+  $('input.tel').on('input',() => {
+      var data = {};
+          data.telphone = $('.tel').val();
+      if(data.telphone.length == 11){
+        $.ajax({
+          url:'/admin/isExist',
+          type:'get',
+          data:data,
+          dataType:'json',
+          success:function(json){
+            console.log(json);
+          }
+        });
+      }
   });
 
-  $('.submit').on('click',function(){
+  $('.submit').on('click',() => {
 
     var data = {};
     // 获取表单数据
@@ -37,4 +35,4 @@
       }
     });
   });
-})();
+});

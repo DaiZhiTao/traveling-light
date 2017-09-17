@@ -7,9 +7,13 @@ UserSchema = new Schema({
     telphone: String,
     password: String,
     name: String,
-    date: Date
+    date: {
+      type:Date,
+      default:Date.now()
+    }
 },{
-  versionKey: false
+  versionKey: false,
+  safe: true
 });
 
 // 定义用户模型
