@@ -31,7 +31,9 @@ $(function(){
       data: data,
       dataType: 'json',
       success:function(json){
-        console.log(json);
+        if(json && json.errno){
+          
+        }
       }
     });
   });
