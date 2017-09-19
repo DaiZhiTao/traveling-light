@@ -32,7 +32,7 @@ $(function(){
       dataType: 'json',
       success:function(json){
         if(json && json.errno){
-          
+          location.href = '/login';
         }
       }
     });

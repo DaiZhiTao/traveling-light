@@ -7,10 +7,11 @@
   },
   "dependencies": {
     "body-parser": "^1.17.2",
-    "cookie-parser": "~1.4.3",
+    "cookie-parser": "^1.4.3",
     "crypto": "^1.0.1",
     "debug": "~2.6.3",
     "express": "~4.15.2",
+    "express-session": "^1.15.5",
     "jade": "~1.11.0",
     "jquery": "^3.2.1",
     "mongoose": "^4.11.11",
@@ -18,7 +19,8 @@
     "nodemon": "^1.12.0",
     "requirejs": "^2.3.5",
     "semantic-ui": "^2.2.13",
-    "serve-favicon": "~2.4.2"
+    "serve-favicon": "~2.4.2",
+    "socket.io": "^2.0.3"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0"

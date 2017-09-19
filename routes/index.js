@@ -27,9 +27,15 @@ router.post('/register',(req, res) => {
     password:password
   },(err) => {
     if(!err){
+      res.cookie("account", {account: req.body.telphone, password: password}, {maxAge: 60000});
+
       res.send({
         errno : 1001,
-        error : '注册成功'
+        error : '注册成功',
+        data : {
+          telphone :req.body.telphone,
+          password : password
+        }
       });
     }else{
       res.send({
