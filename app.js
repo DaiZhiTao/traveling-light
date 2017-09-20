@@ -3,6 +3,7 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
+var session = require('express-session');
 var bodyParser = require('body-parser');
 
 
@@ -25,6 +26,18 @@ app.use(express.static(path.join(__dirname, '')));
 
 app.use('/', users);
 app.use('/admin', index);
+
+// 配置session基本信息
+app.use(session({
+  seceret: '5atraveling',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    // 7天
+    maxAge:24*60*60*7,
+    secure: true
+  }
+}));
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

@@ -6,7 +6,7 @@ $(function(){
           data.telphone = $('.tel').val();
       if(data.telphone.length == 11){
         $.ajax({
-          url:'/admin/isExist',
+          url:'/isExist',
           type:'get',
           data:data,
           dataType:'json',
@@ -26,7 +26,7 @@ $(function(){
     });
 
     $.ajax({
-      url:'/admin/register',
+      url:'/register',
       type:'post',
       data: data,
       dataType: 'json',

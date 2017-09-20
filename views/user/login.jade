@@ -1,5 +1,23 @@
-extends layout
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='public/stylesheets/common.css')
+    link(rel='stylesheet', href='http://at.alicdn.com/t/font_408156_yxprqqrqpj1hsemi.css')
+    script(type='text/javascript', src='http://at.alicdn.com/t/font_408156_yxprqqrqpj1hsemi.js')
 
-block login
-  h1= title
-  p 登录
+    link(rel='stylesheet', href='public/stylesheets/users/login.css')
+  body
+    p 登录
+    .login-wrapper
+      form(action='/admin/login',method='post')
+        .form-item
+          svg.icon(aria-hidden="true")
+            use(xlink:href='#icon-account')
+          input(name="account", type="text")
+        .form-item
+          svg.icon(aria-hidden="true")
+            use(xlink:href='#icon-password')
+          input(name="password", type="password")
+        .form-item
+          button.login-btn(type="submit") 登录
