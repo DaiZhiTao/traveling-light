@@ -10,7 +10,7 @@ html
   body
     p 登录
     .login-wrapper
-      form(action='/admin/login',method='post')
+      form.login-form(action='javascript:void(0)',method='post')
         .form-item
           svg.icon(aria-hidden="true")
             use(xlink:href='#icon-account')
@@ -21,3 +21,6 @@ html
           input(name="password", type="password")
         .form-item
           button.login-btn(type="submit") 登录
+
+    script(src='public/lib/third/jqurey.min.js')
+    script(type='text/javascript', src='public/javascripts/user/login/login.js')
