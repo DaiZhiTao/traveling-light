@@ -7,6 +7,13 @@ $(function(){
     console.log(data);
 
     // 异步登录
-    
+    $.ajax({
+      url:'/loign',
+      type:'post',
+      data: data,
+      success: function(json){
+
+      }
+    })
   });
 });

@@ -10,11 +10,14 @@ class User extends DB{
   isExist (options,callback){
     var user = UserModel.find(options,(err, docs) => {
       if(!err){
-        callback(docs);
-      }else{
         callback({
           errno : 3001,
           error : '用户已存在'
+        });
+      }else{
+        callback({
+          errno : 3002,
+          error : '用户不存在'
         });
       }
     });

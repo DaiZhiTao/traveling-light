@@ -36,6 +36,17 @@ router.get('/', (req, res, next) => {
 // 登录
   router.get('/login',(req, res, next) => {
     res.render('user/login', { title: '登录'});
+  }).post('/login',(req, res, next) => {
+    var md5  = cry = crypto.create('md5');
+    var password = md5.update(req.body.password);
+    var account = req.body.account;
+
+    UserInstance.isExist({
+      telphone: account,
+      password: password
+    },(data) => {
+        res.send(data);
+    });
   });
 
 // 注册
