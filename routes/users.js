@@ -36,7 +36,7 @@ router.get('/', (req, res, next) => {
 // 登录
   router.get('/login',(req, res, next) => {
     res.render('user/login', { title: '登录'});
-  }).post('/login',(req, res, next) => {
+  }).post('/login',(req, res) => {
     var md5  = cry = crypto.create('md5');
     var password = md5.update(req.body.password);
     var account = req.body.account;
@@ -45,7 +45,7 @@ router.get('/', (req, res, next) => {
       telphone: account,
       password: password
     },(data) => {
-        res.send(data);
+        res.send('hello');
     });
   });
 
@@ -63,7 +63,7 @@ router.get('/', (req, res, next) => {
       password:password
     },(err) => {
       if(!err){
-        res.cookie("account", {account: req.body.telphone, password: password}, {maxAge: 60000});
+        // res.cookie("account", {account: req.body.telphone, password: password}, {maxAge: 60000});
 
         res.send({
           errno : 1001,
